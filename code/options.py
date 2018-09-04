@@ -91,6 +91,12 @@ def load_arguments():
     argparser.add_argument('--n_filters',
             type=int,
             default=128)
+    argparser.add_argument('--train_start',
+            type=int,
+            default=0)
+    argparser.add_argument('--train_end',
+            type=int,
+            default=0)
 
     args = argparser.parse_args()
 
