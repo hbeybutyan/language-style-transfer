@@ -205,10 +205,8 @@ if __name__ == '__main__':
     if args.train:
         #train0 = load_sent(args.train + '.0', args.max_train_size)
         #train1 = load_sent(args.train + '.1', args.max_train_size)
-        print("HBBBBBBBBBBBBBBBBB" + str(args.train_start))
-        print("HBBBBBBBBBBBBBBBBB" + str(args.train_end))
         train0 = load_sent_lines(args.train + '.0', args.train_start, args.train_end)
-        train1 = load_sent(args.train + '.1', args.train_start, args.train_end)
+        train1 = load_sent_lines(args.train + '.1', args.train_start, args.train_end)
 
 
         print '#sents of training file 0:', len(train0)
