@@ -10,7 +10,7 @@ import tensorflow as tf
 from vocab import Vocabulary, build_vocab
 from accumulator import Accumulator
 from options import load_arguments
-from file_io import load_sent, write_sent
+from file_io import load_sent, write_sent, load_sent_lines
 from utils import *
 from nn import *
 import beam_search, greedy_decoding
@@ -203,8 +203,14 @@ if __name__ == '__main__':
 
     #####   data preparation   #####
     if args.train:
-        train0 = load_sent(args.train + '.0', args.max_train_size)
-        train1 = load_sent(args.train + '.1', args.max_train_size)
+        #train0 = load_sent(args.train + '.0', args.max_train_size)
+        #train1 = load_sent(args.train + '.1', args.max_train_size)
+        print("HBBBBBBBBBBBBBBBBB" + str(args.train_start))
+        print("HBBBBBBBBBBBBBBBBB" + str(args.train_end))
+        train0 = load_sent_lines(args.train + '.0', args.train_start, args.train_end)
+        train1 = load_sent(args.train + '.1', args.train_start, args.train_end)
+
+
         print '#sents of training file 0:', len(train0)
         print '#sents of training file 1:', len(train1)
 
