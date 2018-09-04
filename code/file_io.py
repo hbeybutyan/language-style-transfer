@@ -22,7 +22,7 @@ def load_sent_lines(path, start=0, end=0):
     data = []
     with open(path) as f:
         lines = f.readlines()
-        datalines = lines[start, end]
+        datalines = lines[start: end]
         for line in datalines:
             data.append(line.split())
     return data
