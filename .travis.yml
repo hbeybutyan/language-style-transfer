@@ -6,4 +6,4 @@ python:
 install:
   - pip install -r requirements.txt
 script:
-  - travis_wait 600 python ./code/style_transfer.py --train ./data/yelp/sentiment.train --dev ./data/yelp/sentiment.dev --output ./tmp/sentiment.dev --vocab ./tmp/yelp.vocab --model ./tmp/model --train_start 0 --train_end 1000
+  - travis_wait 600 python ./code/style_transfer.py --train ./data/yelp/sentiment.train --dev ./data/yelp/sentiment.dev --output ./tmp/sentiment.dev --vocab ./tmp/yelp.vocab --model ./tmp/model --train_start 0 --train_end 100
